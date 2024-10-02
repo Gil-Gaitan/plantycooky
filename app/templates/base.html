@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+    <head>
+      {% if title %}
+      <title>{{ title }} - Plant Seeds Cook</title>
+      {% else %}
+      <title>Always be planting.</title>
+      {% endif %}
+    </head>
+    <body>
+        <div>Plant Seeds Cook: <a href="/index">Home</a></div>
+        <hr>
+        {% block content %}{% endblock %}
+    </body>
+</html>
