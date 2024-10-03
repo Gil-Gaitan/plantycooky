@@ -1,5 +1,10 @@
 from flask import Flask
+from config import Config 
+#import the Config class from config.py
 
-app = Flask(__name__) # Create an instance of the Flask class
+# Create an instance of the Flask class
+app = Flask(__name__)
+# Load the configuration
+app.config.from_object(Config)
 
-from app import routes # Import the routes module, doesn't exist yet.
+from app import routes
