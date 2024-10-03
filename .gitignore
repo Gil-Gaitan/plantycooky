@@ -1,0 +1,10 @@
+__pycache__
+*.pyc
+.dist
+env/
+venv/
+.env
+venv
+config.py
+
+# flask run --port 5001
