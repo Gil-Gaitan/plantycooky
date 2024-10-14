@@ -13,3 +13,7 @@ flask run --port 5001
 flask db init
 flask db migrate -m "users table"
 
+>>> from app import app, db
+>>> from app.models import User, Post
+>>> import sqlalchemy as sa
+>>> app.app_context().push()
