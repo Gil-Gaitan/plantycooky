@@ -1,8 +1,8 @@
 from flask import Flask 
 from config import Config #import the Config class from config.py
-from flask_sqlalchemy import SQLAlchemy # type: ignore
-from flask_migrate import Migrate # type: ignore
-from flask_login import LoginManager # type: ignore
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
+from flask_login import LoginManager
 
 app = Flask(__name__) # Create an instance of the Flask class
 app.config.from_object(Config)# Load the configuration
