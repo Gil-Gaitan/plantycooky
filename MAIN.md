@@ -4,9 +4,12 @@ MAIN.md documents branch development
     login form is complete
     adjust for proper links and redirects
 
+10/13/23 
+
 use:
 source venv/bin/activate
 flask run --port 5001
 
-
+flask db init
+flask db migrate -m "users table"
 
