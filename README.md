@@ -5,4 +5,4 @@ Python
 Flask
 Git
 GitHub
-Virtual Environments use: source venv/bin/activate
+Virtual Environments
