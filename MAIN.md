@@ -1,17 +1,41 @@
-MAIN.md documents branch development
+# MAIN.md Documentation for Branch Development
 
-10/2/24 CH3 WTForms for login
-    login form is complete
-    adjust for proper links and redirects
+## 10/02/24 - CH3 WTForms for Login
+- Login form is complete
+- Adjust for proper links and redirects
 
-10/13/23 Preparing The User Model for Flask-Login
-The four required items are listed below:
-    is_authenticated: a property that is True if the user has valid credentials or False otherwise.
-    is_active: a property that is True if the user's account is active or False otherwise.
-    is_anonymous: a property that is False for regular users, and True only for a special, anonymous user.
-    get_id(): a method that returns a unique identifier for the user as a string.
+---
 
-use:
+## 10/13/23 - Preparing The User Model for Flask-Login
+
+The four required items for Flask-Login are listed below:
+
+1. **`is_authenticated`**:  
+   A property that is `True` if the user has valid credentials, or `False` otherwise.
+   
+2. **`is_active`**:  
+   A property that is `True` if the user's account is active, or `False` otherwise.
+   
+3. **`is_anonymous`**:  
+   A property that is `False` for regular users and `True` only for a special, anonymous user.
+   
+4. **`get_id()`**:  
+   A method that returns a unique identifier for the user as a string.
+
+---
+
+## app/models.py - Database Model Representations
+
+Example of adding a relation:
+
+```python
+followers = sa.Table(
+    'followers',
+    db.metadata,
+    sa.Column('follower_id', sa.Integer, sa.ForeignKey('user.id'), primary_key=True),
+    sa.Column('followed_id', sa.Integer, sa.ForeignKey('user.id'), primary_key=True)
+)
+
 source venv/bin/activate
 flask run --port 5001
 
