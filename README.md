@@ -17,6 +17,7 @@ This project includes:
 2. **Homepage:** Display personalized posts and messages for authenticated users.
 3. **Data Engineering:** The backend connects to a MySQL database for managing user data.
 4. **Dynamic Routing:** Routes include home, login, and logout pages, with dynamic content rendering based on user data.
+5. **Unit Testing:** 
 
 ## Installation & Setup
 To get started with this project, follow the steps below:
