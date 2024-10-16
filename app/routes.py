@@ -89,7 +89,6 @@ def user(username):
     return render_template('user.html', user=user, posts=posts.items,
                            next_url=next_url, prev_url=prev_url, form=form)
 
-
 @app.before_request
 def before_request():
     if current_user.is_authenticated:
