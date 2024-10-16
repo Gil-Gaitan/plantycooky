@@ -1,4 +1,4 @@
-2024-10-15 23:37:51,532 ERROR: Exception on /index [GET] [in /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/flask/app.py:838]
+2024-10-15 23:36:13,087 ERROR: Exception on /index [GET] [in /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/flask/app.py:838]
 Traceback (most recent call last):
   File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/flask/app.py", line 1473, in wsgi_app
     response = self.full_dispatch_request()
@@ -38,9 +38,9 @@ Traceback (most recent call last):
   File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/jinja2/environment.py", line 936, in handle_exception
     raise rewrite_traceback_stack(source=source)
   File "/Users/ggmacair2023/Library/Mobile Documents/com~apple~CloudDocs/plantseedscook/app/templates/index.html", line 26, in template
-    {% endfor %}
-jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endfor'. Jinja was looking for the following tags: 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
-2024-10-15 23:38:19,039 ERROR: Exception on /index [GET] [in /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/flask/app.py:838]
+    {% endblock %}
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endblock'. You probably made a nesting mistake. Jinja is expecting this tag, but currently looking for 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
+2024-10-15 23:36:18,966 ERROR: Exception on /index [GET] [in /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/flask/app.py:838]
 Traceback (most recent call last):
   File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/flask/app.py", line 1473, in wsgi_app
     response = self.full_dispatch_request()
@@ -80,5 +80,5 @@ Traceback (most recent call last):
   File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/jinja2/environment.py", line 936, in handle_exception
     raise rewrite_traceback_stack(source=source)
   File "/Users/ggmacair2023/Library/Mobile Documents/com~apple~CloudDocs/plantseedscook/app/templates/index.html", line 26, in template
-    {% endfor %}
-jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endfor'. Jinja was looking for the following tags: 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
+    {% endblock %}
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endblock'. You probably made a nesting mistake. Jinja is expecting this tag, but currently looking for 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.

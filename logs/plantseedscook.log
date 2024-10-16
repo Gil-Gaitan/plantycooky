@@ -1,4 +1,4 @@
-2024-10-15 00:32:38,962 ERROR: Exception on /index [GET] [in /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/flask/app.py:838]
+2024-10-15 23:38:20,209 ERROR: Exception on /explore [GET] [in /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/flask/app.py:838]
 Traceback (most recent call last):
   File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/flask/app.py", line 1473, in wsgi_app
     response = self.full_dispatch_request()
@@ -15,9 +15,9 @@ Traceback (most recent call last):
   File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/flask_login/utils.py", line 290, in decorated_view
     return current_app.ensure_sync(func)(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/ggmacair2023/Library/Mobile Documents/com~apple~CloudDocs/plantseedscook/app/routes.py", line 31, in index
-    return render_template('index.html', title='Home Page', form=form,
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ggmacair2023/Library/Mobile Documents/com~apple~CloudDocs/plantseedscook/app/routes.py", line 160, in explore
+    return render_template("index.html", title='Explore', posts=posts.items,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/flask/templating.py", line 149, in render_template
     template = app.jinja_env.get_or_select_template(template_name_or_list)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -37,10 +37,10 @@ Traceback (most recent call last):
     self.handle_exception(source=source_hint)
   File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/jinja2/environment.py", line 936, in handle_exception
     raise rewrite_traceback_stack(source=source)
-  File "/Users/ggmacair2023/Library/Mobile Documents/com~apple~CloudDocs/plantseedscook/app/templates/index.html", line 20, in template
-    {% endblock %}
-jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endblock'. You probably made a nesting mistake. Jinja is expecting this tag, but currently looking for 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
-2024-10-15 00:32:46,177 ERROR: Exception on /index [GET] [in /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/flask/app.py:838]
+  File "/Users/ggmacair2023/Library/Mobile Documents/com~apple~CloudDocs/plantseedscook/app/templates/index.html", line 26, in template
+    {% endfor %}
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endfor'. Jinja was looking for the following tags: 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
+2024-10-15 23:38:49,473 ERROR: Exception on /index [GET] [in /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/flask/app.py:838]
 Traceback (most recent call last):
   File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/flask/app.py", line 1473, in wsgi_app
     response = self.full_dispatch_request()
@@ -57,9 +57,9 @@ Traceback (most recent call last):
   File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/flask_login/utils.py", line 290, in decorated_view
     return current_app.ensure_sync(func)(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/ggmacair2023/Library/Mobile Documents/com~apple~CloudDocs/plantseedscook/app/routes.py", line 31, in index
-    return render_template('index.html', title='Home Page', form=form,
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ggmacair2023/Library/Mobile Documents/com~apple~CloudDocs/plantseedscook/app/routes.py", line 37, in index
+    return render_template('index.html', title='Home', form=form,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/flask/templating.py", line 149, in render_template
     template = app.jinja_env.get_or_select_template(template_name_or_list)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -79,8 +79,9 @@ Traceback (most recent call last):
     self.handle_exception(source=source_hint)
   File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/jinja2/environment.py", line 936, in handle_exception
     raise rewrite_traceback_stack(source=source)
-  File "/Users/ggmacair2023/Library/Mobile Documents/com~apple~CloudDocs/plantseedscook/app/templates/index.html", line 20, in template
-    {% endblock %}
-jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endblock'. You probably made a nesting mistake. Jinja is expecting this tag, but currently looking for 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
-2024-10-15 00:37:51,233 INFO: Plantseedscook startup [in /Users/ggmacair2023/Library/Mobile Documents/com~apple~CloudDocs/plantseedscook/app/__init__.py:43]
-2024-10-15 00:43:12,877 INFO: Plantseedscook startup [in /Users/ggmacair2023/Library/Mobile Documents/com~apple~CloudDocs/plantseedscook/app/__init__.py:43]
+  File "/Users/ggmacair2023/Library/Mobile Documents/com~apple~CloudDocs/plantseedscook/app/templates/index.html", line 26, in template
+    {% endfor %}
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endfor'. Jinja was looking for the following tags: 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
+2024-10-15 23:40:36,901 INFO: Plantseedscook startup [in /Users/ggmacair2023/Library/Mobile Documents/com~apple~CloudDocs/plantseedscook/app/__init__.py:43]
+2024-10-15 23:42:12,507 INFO: Plantseedscook startup [in /Users/ggmacair2023/Library/Mobile Documents/com~apple~CloudDocs/plantseedscook/app/__init__.py:43]
+2024-10-15 23:53:40,361 INFO: Plantseedscook startup [in /Users/ggmacair2023/Library/Mobile Documents/com~apple~CloudDocs/plantseedscook/app/__init__.py:43]
