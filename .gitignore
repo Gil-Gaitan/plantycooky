@@ -7,6 +7,4 @@ venv/
 venv
 config.py
 logs/
-
-
-# flask run --port 5001logs/plantseedscook.log.1
+migrations/
