@@ -24,6 +24,8 @@ The four required items for Flask-Login are listed below:
 
 ---
 
+10/16/24 - to change posts per page, the variable is in config file. 
+
 ## app/models.py - Database Model Representations
 
 Example of adding a relation:
