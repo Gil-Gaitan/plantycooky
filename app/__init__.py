@@ -7,6 +7,7 @@ import logging
 from logging.handlers import SMTPHandler
 from logging.handlers import RotatingFileHandler
 import os
+from flask_mail import Mail
 
 app = Flask(__name__) # Create an instance of the Flask class
 app.config.from_object(Config)# Load the configuration
@@ -14,6 +15,7 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 login = LoginManager(app)
 login.login_view = 'login'
+mail = Mail(app)
 
 if not app.debug:
     if app.config['MAIL_SERVER']:
@@ -32,9 +34,10 @@ if not app.debug:
         app.logger.addHandler(mail_handler)
     
     if not os.path.exists('logs'):
-        os.mkdir('logs')
+        os.mkdir('logs') # create a directory called logs
+    # RotatingFileHandler is used to save the log messages to a file
     file_handler = RotatingFileHandler('logs/plantseedscook.log', maxBytes=10240, backupCount=10)
-    file_handler.setFormatter(logging.Formatter(
+    file_handler.setFormatter(logging.Formatter( # set the format of the log messages
         '%(asctime)s %(levelname)s: %(message)s [in %(pathname)s:%(lineno)d]'))
     file_handler.setLevel(logging.INFO)
     app.logger.addHandler(file_handler)
