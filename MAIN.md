@@ -1,8 +1,19 @@
 # MAIN.md Documentation for Branch Development
 
+## 11/05/24 - Postmark Feature
+- Signed up for postmark. 
+      - There are basic instructions in settings. Login info saved in cloud note.
+      - May send up to 100 emails a day. Can only send emails to the PSC domain.
+      - May request authentication to send to more email addresses.
+      - Settings for server, look for "Default Broadcast Stream"
+
+      UNSUCCESSFUL in sending an email
+
+---
+
 ## 10/02/24 - CH3 WTForms for Login
 - Login form is complete
-- Adjust for proper links and redirects
+- Adjust for proper links and redirect
 
 ---
 
