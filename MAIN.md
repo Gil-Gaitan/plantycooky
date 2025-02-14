@@ -1,5 +1,21 @@
 # MAIN.md Documentation for Branch Development
 
+## 02/13/25 - Kickstarting it back up, address email routing
+Review instructions to run:
+- Load Virtual Environment
+'''source venv/bin/activate
+-Run App
+'''flask run --port 5001
+
+'''flask db init???
+
+Database: Flask-SQLAlchemy, Flask-Migrate
+user: id, username, email, password_hash - found in app/models.py
+
+To access and read data:
+
+
+
 ## 11/05/24 - Postmark Feature
 - Signed up for postmark. 
       - There are basic instructions in settings. Login info saved in cloud note.
