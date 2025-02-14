@@ -1,61 +1,96 @@
-# MAIN.md Documentation for Branch Development
+# MAIN.md - Branch Development Documentation
 
-## 02/13/25 - Kickstarting it back up, address email routing
-Review instructions to run:
-- Load Virtual Environment
-'''source venv/bin/activate
--Run App
-'''flask run --port 5001
+## 02/13/25 - Kickstarting it Back Up
 
-'''flask db init???
+### Instructions to Run:
 
-Database: Flask-SQLAlchemy, Flask-Migrate
-user: id, username, email, password_hash - found in app/models.py
+1. **Activate Virtual Environment:**
+   ```bash
+   source venv/bin/activate
+   ```
 
-To access and read data:
+2. **Run the Application:**
+   ```bash
+   flask run --port 5001
+   ```
 
+### Database Configuration:
 
+- **Database**: Flask-SQLAlchemy, Flask-Migrate  
+- **User Model Fields**: `id`, `username`, `email`, `password_hash` (defined in `app/models.py`)
+
+### Accessing and Reading Data:
+
+**Note:** Virtual environment setup was adjusted to ensure smooth Python execution.
+
+1. **Setting up the App Context:**
+   ```python
+   >>> from app import app, db
+   >>> from app.models import User, Post
+   >>> import sqlalchemy as sa
+   >>> app.app_context().push()
+   ```
+
+2. **Querying Data:**
+   ```python
+   query = sa.select(User)
+   users = db.session.scalars(query).all()
+   print(users)
+   ```
+
+---
+
+Will get to the email process next time
+
+---
 
 ## 11/05/24 - Postmark Feature
-- Signed up for postmark. 
-      - There are basic instructions in settings. Login info saved in cloud note.
-      - May send up to 100 emails a day. Can only send emails to the PSC domain.
-      - May request authentication to send to more email addresses.
-      - Settings for server, look for "Default Broadcast Stream"
 
-      UNSUCCESSFUL in sending an email
+- **Postmark Setup:**
+   - Signed up for Postmark service.
+   - Basic instructions can be found in settings. Login credentials are saved in cloud storage.
+   - The service allows up to 100 emails per day (limited to the PSC domain).
+   - To send emails to other domains, authentication requests can be made.
+   - **Important**: Check the "Default Broadcast Stream" settings.
 
----
-
-## 10/02/24 - CH3 WTForms for Login
-- Login form is complete
-- Adjust for proper links and redirect
+- **Issue**: Unsuccessful in sending an email.
 
 ---
 
-## 10/13/23 - Preparing The User Model for Flask-Login
+## 10/02/24 - WTForms for Login (Chapter 3)
 
-The four required items for Flask-Login are listed below:
+- Completed the login form.
+- Adjustments needed for proper links and redirects.
+
+---
+
+## 10/13/23 - Preparing the User Model for Flask-Login
+
+### The Four Required Flask-Login Methods for User Model:
 
 1. **`is_authenticated`**:  
-   A property that is `True` if the user has valid credentials, or `False` otherwise.
-   
+   Returns `True` if the user has valid credentials, otherwise `False`.
+
 2. **`is_active`**:  
-   A property that is `True` if the user's account is active, or `False` otherwise.
-   
+   Returns `True` if the user’s account is active, otherwise `False`.
+
 3. **`is_anonymous`**:  
-   A property that is `False` for regular users and `True` only for a special, anonymous user.
-   
+   Returns `False` for regular users and `True` only for a special, anonymous user.
+
 4. **`get_id()`**:  
-   A method that returns a unique identifier for the user as a string.
+   Returns a unique identifier for the user as a string.
 
 ---
 
-10/16/24 - to change posts per page, the variable is in config file. 
+## 10/16/24 - Changing Posts Per Page
+
+- The configuration for adjusting the number of posts per page is located in the config file.
+
+---
 
 ## app/models.py - Database Model Representations
 
-Example of adding a relation:
+Example of adding a relation between users (e.g., followers):
 
 ```python
 followers = sa.Table(
@@ -64,14 +99,32 @@ followers = sa.Table(
     sa.Column('follower_id', sa.Integer, sa.ForeignKey('user.id'), primary_key=True),
     sa.Column('followed_id', sa.Integer, sa.ForeignKey('user.id'), primary_key=True)
 )
+```
 
-source venv/bin/activate
-flask run --port 5001
+### Flask Commands:
 
-flask db init
-flask db migrate -m "users table"
+1. **Activate Virtual Environment:**
+   ```bash
+   source venv/bin/activate
+   ```
 
->>> from app import app, db
->>> from app.models import User, Post
->>> import sqlalchemy as sa
->>> app.app_context().push()
+2. **Run the Flask Application:**
+   ```bash
+   flask run --port 5001
+   ```
+
+3. **Initialize Database:**
+   ```bash
+   flask db init
+   flask db migrate -m "Create users table"
+   ```
+
+4. **Query Data:**
+   ```python
+   >>> from app import app, db
+   >>> from app.models import User, Post
+   >>> import sqlalchemy as sa
+   >>> app.app_context().push()
+   ```
+
+---
