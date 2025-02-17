@@ -9,3 +9,5 @@ config.py
 logs/
 migrations/
 env.py
+.vscode/
+.gitignore

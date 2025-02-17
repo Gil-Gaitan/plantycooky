@@ -1,4 +1,4 @@
-# MAIN.md - Branch Development Documentation
+# Developer's Notes
 
 ## 02/13/25 - Kickstarting it Back Up
 
@@ -40,7 +40,11 @@
 
 ---
 
-Will get to the email process next time
+Will get to the email process next time.
+
+Thanks to The Lot Radio: 
+Razor-N-Tape with JKriv @TheLotRadio 02-12-2025
+https://www.youtube.com/watch?v=hY_WXTLh7Ro
 
 ---
 

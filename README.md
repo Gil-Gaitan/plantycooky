@@ -1,7 +1,7 @@
-# plantycooky
-Site Update V2.1 Omega (IN DEVELOPMENT) Course: blog.miguelgringberg.com THANKS!!!
+# Networking Application
+A tutorial from blog.miguelgringberg.com THANKS!!!
 
-# Plant Seeds Cook - Flask Web Application
+# A flask app with user database
 
 ## Project Overview
 Welcome to the **Plant Seeds Cook** web application! This is a Flask-based app that I’m building to showcase my backend development skills, data engineering, and algorithm implementations. It serves as a learning and application hub for web technologies such as databases, APIs, and user authentication. A micro blog site built with a turtorial will be a piller of the application for UI and web based features. 
